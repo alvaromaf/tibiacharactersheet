@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Character Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="character-sheet" id="character-form">
+        <header>
+            <h1>Tibia Character Sheet</h1>
+        </header>
+ 
+    <button type="button" id="source1-button">Vetomo</button>
+    <button type="button" id="source2-button">Temp2</button>
+    <button type="button" id="source3-button">Temp3</button>
+ 
+        <section class="character-info">
+            <h2>Character Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <label for="class">Sex:</label>
+            <input type="text" id="sex">
+            <label for="class">Title:</label>
+            <input type="text" id="title">
+            <label for="class">Vocation:</label>
+            <input type="text" id="vocation">
+            <label for="class">Level:</label>
+            <input type="number" id="level">
+            <label for="class">Achievement Points:</label>
+            <input type="number" id="achievement_points">
+            <label for="class">World:</label>
+            <input type="text" id="world">
+            <label for="class">Residence:</label>
+            <input type="text" id="residence">
+        </section>
+
+        <section class="guild-info">
+            <h2>Guild Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="guild_name">
+            <label for="class">Rank:</label>
+            <input type="text" id="guild_rank">
+        </section>
+
+        <section class="outro">
+            <h2>Outro</h2>
+            <label for="name">Status:</label>
+            <input type="text" id="account_status">
+			<label for="name">Comment:</label>
+            <textarea id="comment" rows="5"></textarea>
+        </section>
+        <footer>
+            <p>Created with HTML & CSS</p>
+        </footer>
+    </div>
+<!--     <script src="data.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>
