@@ -1,12 +1,18 @@
-// Define an asynchronous function to fetch and store the data
-async function fetchCharacterData() {
-  const apiUrl = "https://api.tibiadata.com/v4/character/Vetomo";
-  const response = await fetch(apiUrl);
-  const data = await response.json();
-  return data; // Return the data
-}
+document.getElementById('data-source').addEventListener('change', async function () {
 
-// Function to fill the form with JSON data
+// Get the selected value from the dropdown
+const selectedValue = this.value;
+
+if (selectedValue) {
+
+// Construct the API URL using the selected value
+const apiUrl = `https://api.tibiadata.com/v4/character/${selectedValue}`;
+
+// Fetch data from the API
+const response = await fetch(apiUrl);
+const characterData = await response.json();
+
+// Fill the form with data from the API
 function fillForm(data) {
     const form = document.getElementById('character-form');
     
@@ -18,23 +24,21 @@ function fillForm(data) {
     });
 }
 
-// Add event listeners to buttons
-// Use async/await to access the returned value
-(async () => {
-  const characterData = await fetchCharacterData();
-  console.log(characterData); // Access the fetched data
-
-document.getElementById('source1-button').addEventListener('click', () => {
+// Add event listeners to button
+document.getElementById('button').addEventListener('click', () => {
     fillForm(characterData.character.character);
 });
+
 
  let guild_data = {
 	 guild_name: characterData.character.character.guild.name,
 	 guild_rank: characterData.character.character.guild.rank,
  }
 
-document.getElementById('source1-button').addEventListener('click', () => {
+document.getElementById('button').addEventListener('click', () => {
     fillForm(guild_data);
 });
 
-})();
+}
+
+});
